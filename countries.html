@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countries API</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ‘Arvo’, serif;
+            font-weight: bolder;
+            color: #333;
+            background: #333;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 2% 10% 10% 10%;
+            background: #fff;
+        }
+
+        .country_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .country {
+            padding: 30px;
+            margin: 10px;
+            width: 32%;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            transform: scale(1);
+            transition: transform 0.20s ease-in-out;
+
+        }
+
+        .country:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            cursor: pointer;
+            transform: scale(1.025);
+        }
+
+        img {
+            width: 30%;
+        }
+    </style>
+</head>
+<!-- Numbers of countries in the world -->
+
+<body>
+    <!-- Countries -->
+    <div class="container">
+        <h1> Countries Information </h1>
+
+        <div class="country_container">
+        </div>
+    </div>
+    <script src="./countries.js"></script>
+
+    <script>
+        const countryContainer = document.querySelector('.country_container')
+        const capital = document.querySelector('.capital')
+        const url = 'https://restcountries.eu/rest/v2/all'
+        fetch(url)
+            .then(response => response.json())
+            .then(countries => {
+                for (const country of countries) {
+                    let {
+                        name,
+                        capital,
+                        population,
+                        flag,
+                    } = country
+                    let div = document.createElement('div')
+                    let countryName = document.createElement('h2')
+                    let countrycapital = document.createElement('p')
+                    let countryPopulation = document.createElement('p')
+                    let countryFlag = document.createElement('img')
+                    div.setAttribute('class', 'country')
+
+
+                    countryName.textContent = `Country : ${name}`
+                    countrycapital.textContent = `Capital: ${capital}`
+                    countryPopulation.textContent = `Population : ${population}`
+                    countryFlag.src = flag
+
+                    div.appendChild(countryName)
+                    div.appendChild(countrycapital)
+                    div.appendChild(countryPopulation)
+                    div.appendChild(countryFlag)
+
+                    countryContainer.appendChild(div)
+                }
+            })
+    </script>
+
+
+    <!-- <script>
+        const countryContainer = document.querySelector('.country_container')
+        const numOfCountry = document.querySelector('.num_of_country')
+        const allCountries = countries.length
+        numOfCountry.textContent = `Total numbers of countries in the planet ${allCountries}`
+        for (const country of countries) {
+            let eachCountry = document.createElement('div')
+            eachCountry.setAttribute('class', 'country')
+            eachCountry.textContent = country
+            countryContainer.appendChild(eachCountry)
+        }
+    </script> -->
+</body>
+
+</html>
