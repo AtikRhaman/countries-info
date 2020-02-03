@@ -1,0 +1,18 @@
+//footer
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+
+    &__img img {
+        opacity: .6;
+        width: 80%;
+    }
+
+    &__para {
+        color: $color-white;
+        opacity: .8;
+    }
+}
