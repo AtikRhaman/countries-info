@@ -4,7 +4,7 @@
     background: $color-brand;
     border: none;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 10px;
     color: $color-white;
     text-align: center;
     display: inline-block;
@@ -31,4 +31,9 @@
 
 .button:hover {
     transform: scale(1.030);
+}
+
+.button-active {
+    background: $color-brand;
+    color: $color-white;
 }

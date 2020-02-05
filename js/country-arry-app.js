@@ -104,3 +104,12 @@ btnSort.addEventListener("click", function () {
     arrylength();
 });
 // Filter, includes, match, flag
+
+
+
+function compareCapital(a, b) {
+    if (a.capital > b.capital) return 1;
+    if (a.capital == b.capital) return 0;
+    if (a.capital < b.capital) return -1;
+}
+countries.sort(compareCapital);

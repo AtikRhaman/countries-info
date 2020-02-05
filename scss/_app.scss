@@ -28,20 +28,17 @@
 //     cursor: pointer;
 //   }
 // }
+body {
+  background: $color-light-grey;
+}
+
+p {
+  color: $color-text;
+}
 
 .total-country {
   display: flex;
   margin: 10px 0;
-}
-
-// .search-result {
-//   display: flex;
-//   margin: 10px 0 10px 0;
-// }
-
-.result {
-  color: $color-secoundary;
-  padding-left: 20px;
 }
 
 .arrow-icon {
@@ -52,15 +49,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 270px;
 }
 
 .country {
   padding: 30px;
   margin: 10px;
-  width: 15%;
+  width: 18%;
   background: $color-white;
   box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.07);
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 30px;
   align-items: center;
   font-size: regular-text;
@@ -69,6 +67,10 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  img {
+    width: 80%;
+  }
 }
 
 .country:hover {
@@ -77,6 +79,34 @@
   cursor: pointer;
 }
 
-img {
+.banner-input-container {
+  width: 90%;
+  background: $color-white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.07);
+}
+
+.search-result {
+  display: flex;
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  border-radius: 10px;
   width: 70%;
+  justify-content: center;
+  background: $color-brand-light;
+
+  &__text {
+    color: $color-text;
+    font-size: $regular-text;
+  }
+}
+
+.result {
+  color: $color-secoundary;
+  padding-left: 20px;
 }
