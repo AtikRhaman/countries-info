@@ -121,7 +121,34 @@ p {
   font-weight: 900;
 }
 
-.contry-section {
+.graph {
+  background: #cccccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.graph__item {
+  background: #FCFCFA;
+  width: 300px;
+}
+.graph__item p {
+  font-size: 18px;
+}
+.graph__item:nth-child(1) {
+  width: 10%;
+}
+.graph__item:nth-child(2) {
+  width: 70%;
+  background: #E8F8F5;
+}
+.graph__item:nth-child(3) {
+  width: 20%;
+}
+
+.country-section {
   padding: 0 0 60px 0;
   background: #FCFCFA;
 }
@@ -130,6 +157,10 @@ p {
   background: #1ABC9C;
   padding: 30px 0;
   height: 350px;
+}
+
+.graph-section {
+  background: #FCFCFA;
 }
 
 .footer-section {

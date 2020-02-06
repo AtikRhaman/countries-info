@@ -10,6 +10,12 @@ const capital = document.querySelector(".capital");
 const arowIcon = document.querySelector("#arow-icon");
 const arowIcon2 = document.querySelector("#arow-icon2");
 const arowIcon3 = document.querySelector("#arow-icon3");
+const graphPopulation = document.querySelector("#graph-population")
+const graphCountryName = document.querySelector("#graph-country-name")
+const graphWorldPopulation = document.querySelector("#graph-world-population")
+// graph declaration
+const graphContainer = document.querySelector("#graph_container")
+
 let startWithAnyWord;
 let serchWord;
 let getCapital;
@@ -24,6 +30,9 @@ fetch(url)
         // Defult country function
         displayCountry(countries);
         arrylength(countries, numberOfCountries);
+
+        // Defult graph
+        displayGraph(countries)
 
         // search by starting word
         inputCountryName.addEventListener("input", function (evt) {
@@ -61,7 +70,6 @@ fetch(url)
                 displayCountry(startWithAnyWord.reverse(sortByCountryFun));
                 click = true
             }
-
         });
 
         /* sort by capital name */
@@ -92,7 +100,6 @@ fetch(url)
             sortByCapital.classList.remove("button-active");
             sortByPopulation.classList.add("button-active");
             rotateItem(arowIcon3);
-
             // sort
             if (startWithAnyWord == null || undefined) {
                 displayCountry(countries.reverse(sortByPopulationFun));
@@ -112,6 +119,10 @@ fetch(url)
             //     displayCountry(startWithAnyWord.reverse());
             // }
         });
+
+        // get the world population
+        // const worldPopulation = countries.reduce((sumOfPopulation, population) => sumOfPopulation + population)
+        // console.log(worldPopulation)
     });
 
 // Display the country information
@@ -137,6 +148,8 @@ const displayCountry = countries => {
         //find the language arry insight the country array
         let langs = languages.map(lang => lang.name);
 
+
+
         div.setAttribute("class", "country");
         countryFlag.src = flag;
         countryName.textContent = `${name}`;
@@ -154,8 +167,42 @@ const displayCountry = countries => {
         div.appendChild(countrylanguages);
 
         countryContainer.appendChild(div);
+
     }
 };
+
+const displayGraph = countries => {
+    let countryPopuGraph;
+    for (const country of countries) {
+        let {
+            name,
+            population,
+        } = country;
+        let countryNameGraph = document.createElement("p");
+        countryPopulationGraph = document.createElement("p");
+
+        countryNameGraph.textContent = `${name}`;
+        countryPopuGraph = countryPopulationGraph.textContent = population;
+
+        graphCountryName.appendChild(countryNameGraph)
+        graphPopulation.appendChild(countryPopulationGraph)
+    }
+    console.log(countryPopuGraph)
+
+    let worldPopu = 0;
+    for (let i = 0; i < countries.length; i++) {
+        worldPopu += countryPopuGraph
+    }
+    console.log(worldPopu)
+
+    let sumOfWorldPopulation = document.createElement("p")
+    sumOfWorldPopulation.textContent = `${worldPopu}`;
+    graphWorldPopulation.appendChild(sumOfWorldPopulation)
+
+
+
+};
+
 
 // Arry length to display amount of Countries and serch result
 const arrylength = (arr, itemtoAdd) => {

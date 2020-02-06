@@ -111,3 +111,32 @@ p {
   padding-left: 20px;
   font-weight: 900;
 }
+
+.graph {
+
+  background: #cccccc;
+  display: flex;
+  justify-content: space-between;
+  
+  &__item {
+    background: $color-light-grey;
+    width: 300px;
+
+    p {
+      font-size: $regular-text;
+    }
+  }
+
+  &__item:nth-child(1) {
+    width: 10%;
+  }
+
+  &__item:nth-child(2) {
+    width: 70%;
+    background: $color-brand-light;
+  }
+
+  &__item:nth-child(3) {
+    width: 20%;
+  }
+}
