@@ -1,4 +1,4 @@
-const countries = [
+const countries2 = [
     'Afghanistan',
     'Albania',
     'Algeria',

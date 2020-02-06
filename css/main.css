@@ -77,7 +77,7 @@ p {
 }
 
 .banner-input-container {
-  width: 750px;
+  width: 950px;
   background: #ffffff;
   border-radius: 14px;
   display: -webkit-box;
@@ -300,7 +300,6 @@ p {
   border: 1px solid #1ABC9C;
 }
 .button--selected {
-  background: red;
   background: #1ABC9C;
   color: #ffffff;
 }
