@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>World of Countries</title>
+  <link rel="stylesheet" href="./css/basic-settings.css" />
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+  <title>World countries data</title>
+</head>
+
+<body>
+  <!-- UI -->
+  <div class="wrap">
+    <section class="banner-section">
+      <div class="container">
+        <div class="banner">
+          <h1 class="banner__title">World countries data</h1>
+          <div class="total-country">
+            <h2 class="banner__title--subtitle">
+              Numbers of countries in the world:
+            </h2>
+            <h2 class="result" id="number-of-countries"></h2>
+          </div>
+
+          <div class="banner-input-container">
+            <div class="search">
+              <div class="search__item">
+                <input type="text" id="input_country_name" placeholder="Serch country name" />
+              </div>
+            </div>
+            <div class="form ">
+              <div class="form__item">
+                <div class="button button--secoundary button-active" id="sort-by-name">
+                  <i class="arrow-icon"><svg id="arow-icon" enable-background="new 0 0 64 64" height="16"
+                      viewBox="0 0 64 64" width="16" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+                      <path
+                        d="m32 8c-1.104 0-2 .896-2 2v39.899l-14.552-15.278c-.761-.799-2.026-.832-2.828-.069-.8.762-.831 2.027-.069 2.827l16.62 17.449c.756.756 1.76 1.172 2.829 1.172 1.068 0 2.073-.416 2.862-1.207l16.586-17.414c.762-.8.73-2.065-.069-2.827-.799-.763-2.065-.731-2.827.069l-14.552 15.342v-39.963c0-1.104-.896-2-2-2z" />
+                    </svg></i>
+                  Sort by Name
+                </div>
+              </div>
+              <div class=" form__item">
+                <div class="button button--secoundary" id="sort-by-capital">
+                  <i class="arrow-icon"><svg id="arow-icon2" enable-background="new 0 0 64 64" height="16"
+                      viewBox="0 0 64 64" width="16" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+                      <path
+                        d="m32 8c-1.104 0-2 .896-2 2v39.899l-14.552-15.278c-.761-.799-2.026-.832-2.828-.069-.8.762-.831 2.027-.069 2.827l16.62 17.449c.756.756 1.76 1.172 2.829 1.172 1.068 0 2.073-.416 2.862-1.207l16.586-17.414c.762-.8.73-2.065-.069-2.827-.799-.763-2.065-.731-2.827.069l-14.552 15.342v-39.963c0-1.104-.896-2-2-2z" />
+                    </svg></i>
+                  Sort by Capital
+                </div>
+              </div>
+              <div class=" form__item">
+                <div class="button button--secoundary" id="sort-by-population">
+                  <i class="arrow-icon"><svg id="arow-icon3" enable-background="new 0 0 64 64" height="16"
+                      viewBox="0 0 64 64" width="16" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+                      <path
+                        d="m32 8c-1.104 0-2 .896-2 2v39.899l-14.552-15.278c-.761-.799-2.026-.832-2.828-.069-.8.762-.831 2.027-.069 2.827l16.62 17.449c.756.756 1.76 1.172 2.829 1.172 1.068 0 2.073-.416 2.862-1.207l16.586-17.414c.762-.8.73-2.065-.069-2.827-.799-.763-2.065-.731-2.827.069l-14.552 15.342v-39.963c0-1.104-.896-2-2-2z" />
+                    </svg></i>
+                  Sort by Population
+                </div>
+              </div>
+              <div class=" form__item">
+                <div class="button button--secoundary" id="sort-by-population">
+                  <i class="arrow-icon"><svg height="16" viewBox="0 0 384 384" width="16"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m368 352h-320c-8.824219 0-16-7.175781-16-16v-320c0-8.832031-7.167969-16-16-16s-16 7.167969-16 16v320c0 26.472656 21.527344 48 48 48h320c8.832031 0 16-7.167969 16-16s-7.167969-16-16-16zm0 0" />
+                      <path
+                        d="m383.070312 74.847656c-.429687-1.261718-.964843-2.472656-1.6875-3.566406-.03125-.058594-.054687-.113281-.085937-.167969-.769531-1.144531-1.710937-2.136719-2.738281-3.050781-.246094-.222656-.503906-.429688-.773438-.636719-1.113281-.867187-2.289062-1.632812-3.609375-2.1875 0 0 0 0-.007812 0-1.273438-.535156-2.648438-.839843-4.054688-1.023437-.34375-.046875-.679687-.078125-1.023437-.101563-.371094-.023437-.714844-.113281-1.089844-.113281h-56c-8.832031 0-16 7.167969-16 16s7.167969 16 16 16h16.921875l-56.921875 56c-.207031-.214844-.441406-.433594-.664062-.632812l-25.097657-22.367188c-12.503906-12.097656-32.511719-11.96875-44.8125.3125l-132.683593 131.3125c-6.277344 6.214844-6.328126 16.351562-.117188 22.632812 3.136719 3.15625 7.246094 4.742188 11.375 4.742188 4.070312 0 8.136719-1.535156 11.257812-4.625l132.742188-131.375c.207031.214844.441406.433594.664062.632812l25.089844 22.367188c6 5.808594 13.878906 9 22.246094 9 8.542969 0 16.574219-3.328125 22.527344-9.28125l57.472656-56.535156v17.816406c0 8.832031 7.167969 16 16 16s16-7.167969 16-16v-56c0-1.457031-.257812-2.847656-.625-4.191406-.085938-.328125-.191406-.640625-.304688-.960938zm0 0" />
+                    </svg></i>
+                  Graph
+                </div>
+              </div>
+            </div>
+
+            <div class="search-result">
+              <h2 class="search-result__text">Search result:</h2>
+              <h2 class="search-result__result" id="search-in-numbers"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="">
+      <div class="container">
+        <div class="country_container"></div>
+      </div>
+    </section>
+
+    <section class="graph-section">
+      <div class="container">
+        <div class="form ">
+          <div class="form__item">
+            <div class="button button--secoundary button-active" id="sort-by-name">
+              Population
+            </div>
+          </div>
+        </div>
+        <div class="graph">
+          <h2 class="graph__item">World Population</h2>
+          <p class="graph__item" id="graph-world-graph"></p>
+          <p class="graph__item" id="graph-world-population"></p>
+        </div>
+        <div class="graph">
+          <p class="graph__item" id="graph-country-name"></p>
+          <p class="graph__item" id="graph-country-graph"></p>
+          <p class="graph__item" id="graph-population"></p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer">
+        <div class="footer__img">
+          <a href="index.html"> <img src="./img/logo.svg" alt="uxatik" /></a>
+        </div>
+        <div class="footer__para">
+          <p>Copyright 2020 by Atik</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+// .country-container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 30px;
+
+//   &__item {
+//     width: 300px;
+//     height: 140px;
+//     margin: 15px;
+//     text-align: center;
+//     background: $color-white;
+//     box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.07);
+//     border-radius: 5px;
+//     padding: 30px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: regular-text;
+//     transform: scale(1);
+//     transition: transform 0.35s ease-in-out;
+//   }
+
+//   &__item:hover {
+//     transform: scale(1.015);
+//     box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
+//     cursor: pointer;
+//   }
+// }
+
+body {
+  background: $color-light-grey;
+}
+
+p {
+  color: $color-text;
+}
+
+.total-country {
+  display: flex;
+  margin: 10px 0;
+}
+
+.arrow-icon {
+  transform: rotate(20deg);
+}
+
+.country_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 210px;
+}
+
+.country {
+  padding: 30px;
+  margin: 10px;
+  width: 260px;
+  background: $color-white;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.07);
+  border-radius: 14px;
+  padding: 30px;
+  align-items: center;
+  font-size: regular-text;
+  transform: scale(1);
+  transition: transform 0.35s ease-in-out;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  img {
+    width: 80%;
+  }
+}
+
+.country:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.banner-input-container {
+  width: 950px;
+  background: $color-white;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 60px 0 60px;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.07);
+}
+
+.search-result {
+  display: flex;
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  width: 70%;
+  justify-content: center;
+
+  &__text {
+    color: $color-text;
+    font-size: $regular-text;
+  }
+}
+
+.result {
+  color: $color-white;
+  padding-left: 20px;
+  font-weight: 900;
+}
+
+.graph {
+
+  background: #cccccc;
+  display: flex;
+  justify-content: space-between;
+  
+  &__item {
+    background: $color-light-grey;
+    width: 300px;
+
+    p {
+      font-size: $regular-text;
+    }
+  }
+
+  &__item:nth-child(1) {
+    width: 10%;
+  }
+
+  &__item:nth-child(2) {
+    width: 70%;
+    background: $color-brand-light;
+  }
+
+  &__item:nth-child(3) {
+    width: 20%;
+  }
+}
